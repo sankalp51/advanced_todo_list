@@ -1,19 +1,16 @@
 import React from "react";
-const List = ({ list, validity }) => {
-    const [crossStyle, setCrossStyle] = React.useState(false);
+const List = ({ list, validity, onChecked }) => {
 
-    function handleClick() {
-        setCrossStyle(prevState => !prevState);
-    }
+
 
     const content = <ul>
         {list.map((item, index) => {
             return (
                 <li
                     key={index}
-                    onClick={handleClick}
-                    style={{ textDecoration: crossStyle ? 'line-through' :'none'}}>
+                    onClick={() => onChecked(index)}>
                     {item}
+
                 </li>);
         })}
     </ul>

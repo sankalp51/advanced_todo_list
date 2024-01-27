@@ -23,10 +23,18 @@ function App() {
   }
 
   function getListItem(value) {
-    if (value.trim() !== ''){
+    if (value.trim() !== '') {
       setValidity(true);
     }
-      setListItem(value);
+    setListItem(value);
+  }
+
+  function deleteItem(id) {
+    setList(prevState => {
+      return (prevState.filter((items, index) => {
+        return index !== id
+      }))
+    })
   }
 
   return (
@@ -36,7 +44,7 @@ function App() {
       </div>
       <Form retrieveData={getListItem} inputItem={listItem} handleAddItem={populateList} />
       <div>
-        <List list={list} validity={validity} />
+        <List list={list} validity={validity} onChecked={deleteItem} />
       </div>
     </div>
   );
