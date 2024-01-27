@@ -23,10 +23,10 @@ function App() {
   }
 
   function getListItem(value) {
-    if (value !== '') {
+    if (value.trim() !== ''){
       setValidity(true);
     }
-    setListItem(value);
+      setListItem(value);
   }
 
   return (
