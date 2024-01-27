@@ -12,7 +12,7 @@ const List = ({ list, validity }) => {
                 <li
                     key={index}
                     onClick={handleClick}
-                    style={{ textDecoration: crossStyle ? 'line-through' : null }}>
+                    style={{ textDecoration: crossStyle ? 'line-through' :'none'}}>
                     {item}
                 </li>);
         })}
